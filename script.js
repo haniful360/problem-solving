@@ -154,3 +154,75 @@ for (let i = 0; i < array.length; i++) {
     }
 
 }
+
+// do not variable declare symbol
+// @#%^*();:""&
+// []
+// {},12+-/~
+
+// let String = 2;
+
+
+function variousBill(unit) {
+    let firstPerUnit = 5;
+    let secondPerUnit = 10;
+    let thirdPerUnit = 15;
+    let fourPerUnit = 25;
+    if (unit <= 400) {
+        let bill = unit * firstPerUnit;
+        return bill;
+    }
+    else if (unit <= 1500) {
+        let firstCurrentBil = 400 * firstPerUnit;
+        let remainingBill = unit - 400;
+        let secondCurrentBill = remainingBill * secondPerUnit;
+        // console.log(secondCurrentBill);
+        let totalbill = firstCurrentBil + secondCurrentBill;
+        return totalbill;
+    }
+    else if (unit <= 5000) {
+        let firstCurrentBil = 400 * firstPerUnit;
+        // console.log(firstCurrentBil)
+        let secondCurrentBill = 1100 * secondPerUnit;
+        let remainingBill = unit - 1500;
+        let thirdCurrentBill = remainingBill * thirdPerUnit;
+        console.log(thirdCurrentBill);
+        let totalBill = thirdCurrentBill + secondCurrentBill + firstCurrentBil;
+        return totalBill;
+    }
+    else {
+        let firstCurrentBil = 400 * firstPerUnit;
+        // console.log(firstCurrentBil)
+        let secondCurrentBill = 1100 * secondPerUnit;
+        let thirdCurrentBill = 3500 * thirdPerUnit;
+        let remainingBill = unit - 5000;
+        let fourthCurrentBill = remainingBill * fourPerUnit;
+        let totalBill = firstCurrentBil + secondCurrentBill + thirdCurrentBill + fourthCurrentBill;
+        return totalBill;
+    }
+
+}
+
+const currentBill = variousBill(290);
+console.log("Current Bill:", currentBill);
+
+const gasBill = variousBill(360);
+console.log('Gas Bill:', gasBill)
+
+const waterBill = variousBill(140);
+console.log('Water Bill:', waterBill)
+
+const telephoneBill = variousBill(700);
+console.log('Water Bill:', telephoneBill);
+
+const internetBill = variousBill(100);
+console.log('Water Bill:', internetBill);
+
+const tvBill = variousBill(50);
+console.log('Water Bill:', tvBill);
+
+let subtratBill = (gasBill * 0.01) + (waterBill * .01) + (telephoneBill * .01) - 20;
+
+let totalBill = subtratBill + gasBill + waterBill + telephoneBill + tvBill + internetBill + currentBill;
+console.log("totalBill:", totalBill);
+
